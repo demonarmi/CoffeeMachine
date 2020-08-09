@@ -25,9 +25,9 @@ public class Main {
         int milkLeft = milkInMachine - milkToDo;    //ilość mleka, która pozostała w maszynie
         int beansLeft = beansInMachine - beansToDo; //ilość kawy, która pozostała w maszynie
 
-        int starczyWody = waterLeft / neededWater;     //wody wystarczy na zrobienie JESZCZE x kaw
-        int starczyMleka = milkLeft / neededMilk;      //mleka wystarczy na zrobienie JESZCZE x kaw
-        int starczyKawy = beansLeft / neededBeans;     //kawy wystarczy na zrobienie JESZCZE x kaw
+        int enoughWater = waterLeft / neededWater;     //wody wystarczy na zrobienie JESZCZE x kaw
+        int enoughMilk = milkLeft / neededMilk;      //mleka wystarczy na zrobienie JESZCZE x kaw
+        int enoughBeans = beansLeft / neededBeans;     //kawy wystarczy na zrobienie JESZCZE x kaw
 
         int canDoWater = waterInMachine / neededWater;  //
         int canDoMilk = milkInMachine / neededMilk;     //mozna zrobić x kaw z zasobów w maszynie
@@ -36,20 +36,20 @@ public class Main {
         if(waterInMachine >= waterToDo && milkInMachine >= milkToDo && beansInMachine >= beansToDo){
             if(canDoWater == coffeeNeeded || canDoMilk == coffeeNeeded || canDoBeans == coffeeNeeded){
                 System.out.println("Yes, I can make that amount of coffee");
-            } else if(starczyWody != waterToDo && starczyMleka != milkToDo && starczyKawy != beansToDo) {
-                int najmniejsza = Math.min(starczyWody,starczyMleka);
-                if (najmniejsza == starczyWody){
-                    najmniejsza = Math.min(starczyWody,starczyKawy);
-                }else if(najmniejsza == starczyMleka){
-                    najmniejsza = Math.min(starczyMleka,starczyKawy);
+            } else if(enoughWater != waterToDo && enoughMilk != milkToDo && enoughBeans != beansToDo) {
+                int minVal = Math.min(enoughWater,enoughMilk);
+                if (minVal == enoughWater){
+                    minVal = Math.min(enoughWater,enoughBeans);
+                }else if(minVal == enoughMilk){
+                    minVal = Math.min(enoughMilk,enoughBeans);
                 }
-                System.out.println("Yes, I can make that amount of coffee (and even " + najmniejsza + " more than that)");
+                System.out.println("Yes, I can make that amount of coffee (and even " + minVal + " more than that)");
             }
         }
         else if (waterToDo > waterInMachine || milkToDo > milkInMachine || beansToDo > beansInMachine)
         {
             int minVal = canDoWater;
-            if (starczyWody != coffeeNeeded && starczyMleka != coffeeNeeded && starczyKawy != coffeeNeeded) {
+            if (enoughWater != coffeeNeeded && enoughMilk != coffeeNeeded && enoughBeans != coffeeNeeded) {
                 if (canDoMilk < minVal) {
                     minVal = canDoMilk;
                 } else if (canDoBeans < minVal) {
