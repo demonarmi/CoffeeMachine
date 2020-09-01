@@ -1,7 +1,6 @@
 package com.company;
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
         class CoffeeMachinee {
             int waterInMachine;
@@ -28,14 +27,14 @@ public class Main {
         Machine.coffeeInMachine = 120;
         Machine.cupsInMachine = 9;
         Machine.moneyInMachine = 550;
-        int espressoWater = 250;
-        int espressoBeans = 16;
-        int latteWater = 350;
-        int latteMilk = 75;
-        int latteBeans = 20;
-        int cappuccinoWater = 200;
-        int cappuccinoMilk = 100;
-        int cappuccinoBeans = 12;
+        final int espressoWater = 250;
+        final int espressoBeans = 16;
+        final int latteWater = 350;
+        final int latteMilk = 75;
+        final int latteBeans = 20;
+        final int cappuccinoWater = 200;
+        final int cappuccinoMilk = 100;
+        final int cappuccinoBeans = 12;
         String action;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Write action (buy, fill, take, remaining, exit)");
@@ -56,7 +55,7 @@ public class Main {
                                 Machine.coffeeInMachine -= 16;
                                 Machine.cupsInMachine -= 1;
                                 Machine.moneyInMachine += 4;
-                                //Machine.showProducts(Machine);
+
                             }else if (espressoWater > Machine.waterInMachine){
                                 System.out.println("Sorry, not enough water");
                                 System.out.println();
@@ -99,7 +98,7 @@ public class Main {
                                 Machine.coffeeInMachine -= 12;
                                 Machine.cupsInMachine -= 1;
                                 Machine.moneyInMachine += 6;
-                                //Machine.showProducts(Machine);
+
                             }else if (cappuccinoWater > Machine.waterInMachine){
                                 System.out.println("Sorry, not enough water");
                             }else if (cappuccinoBeans > Machine.coffeeInMachine){
@@ -145,6 +144,6 @@ public class Main {
                     System.exit(0);
                     break;
             }
-        } while (action != "exit");
+        } while (!action.equals("exit"));
     }
 }
