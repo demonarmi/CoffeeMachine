@@ -12,19 +12,19 @@ public class Main {
         do {
             switch (Machine.action) {
                 case "buy":
-                    Machine.buy(Machine);
+                    Machine.buyCoffee(Machine);
                     Machine.processInputCommands(Machine);
                     break;
                 case "fill":
-                    Machine.fill(Machine);
+                    Machine.fillMachine(Machine);
                     Machine.processInputCommands(Machine);
                     break;
                 case "remaining":
-                    Machine.remaining(Machine);
+                    Machine.remainingResources(Machine);
                     Machine.processInputCommands(Machine);
                     break;
                 case "take":
-                    Machine.take(Machine);
+                    Machine.takeMoney(Machine);
                     Machine.processInputCommands(Machine);
                     break;
                 case "exit":

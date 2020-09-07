@@ -18,8 +18,8 @@ public class CoffeeMachinee {
     final int cappuccinoBeans = 12;
     String action;
 
-    public void setAction(String s) {
-        this.action = s;
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public void processInputCommands(CoffeeMachinee CF){
@@ -39,7 +39,7 @@ public class CoffeeMachinee {
         System.out.println();
     }
 
-    public void buy(CoffeeMachinee CF) {
+    public void buyCoffee(CoffeeMachinee CF) {
         final Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("What do You want to buy? 1 - espresso, 2 - latte, 3 - cappuccino");
@@ -110,7 +110,7 @@ public class CoffeeMachinee {
         }
     }
 
-    public void fill(CoffeeMachinee CF) {
+    public void fillMachine(CoffeeMachinee CF) {
         final Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Write how many ml of water you want to add: ");
@@ -128,13 +128,13 @@ public class CoffeeMachinee {
         System.out.println();
     }
 
-    public void take(CoffeeMachinee CF) {
+    public void takeMoney(CoffeeMachinee CF) {
         System.out.println();
         System.out.println("I gave you $" + CF.moneyInMachine);
         CF.moneyInMachine = 0;
     }
 
-    public void remaining(CoffeeMachinee CF) {
+    public void remainingResources(CoffeeMachinee CF) {
         CF.showProducts(CF);
     }
 
